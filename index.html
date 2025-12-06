@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App TEA Interactiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Panel</p>
+        <h1>App TEA Interactiva</h1>
+      </div>
+      <div class="header-actions">
+        <button class="ghost">Soporte</button>
+        <button class="primary" data-screen="dashboard">Inicio</button>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="screen active"
+        id="dashboard"
+        aria-label="Panel del adulto"
+        aria-hidden="false"
+        tabindex="-1"
+      >
+        <div class="summary-grid">
+          <article class="card summary">
+            <div class="icon-circle">👶</div>
+            <div>
+              <p class="label">Niños</p>
+              <p class="value">3 activos</p>
+            </div>
+          </article>
+          <article class="card summary">
+            <div class="icon-circle">🧩</div>
+            <div>
+              <p class="label">Módulos</p>
+              <p class="value">8 disponibles</p>
+            </div>
+          </article>
+          <article class="card summary">
+            <div class="icon-circle">📅</div>
+            <div>
+              <p class="label">Rutinas</p>
+              <p class="value">5 configuradas</p>
+            </div>
+          </article>
+          <article class="card summary">
+            <div class="icon-circle">⭐</div>
+            <div>
+              <p class="label">Progreso</p>
+              <p class="value">72% promedio</p>
+            </div>
+          </article>
+        </div>
+
+        <section class="card" aria-labelledby="children-title">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Adulto</p>
+              <h2 id="children-title">Niños</h2>
+            </div>
+            <button class="primary ghost">Agregar niño</button>
+          </div>
+          <div class="child-list">
+            <article class="child-card">
+              <div>
+                <p class="child-name">Sofía</p>
+                <p class="child-note">Último módulo: Animales</p>
+              </div>
+              <div class="child-actions">
+                <button class="ghost" data-screen="modules">Ver ejercicios</button>
+                <button class="primary" data-screen="progress">Ver progreso</button>
+              </div>
+            </article>
+            <article class="child-card">
+              <div>
+                <p class="child-name">Mateo</p>
+                <p class="child-note">Último módulo: Me calmo</p>
+              </div>
+              <div class="child-actions">
+                <button class="ghost" data-screen="modules">Ver ejercicios</button>
+                <button class="primary" data-screen="progress">Ver progreso</button>
+              </div>
+            </article>
+            <article class="child-card">
+              <div>
+                <p class="child-name">Valentina</p>
+                <p class="child-note">Último módulo: Motricidad fina</p>
+              </div>
+              <div class="child-actions">
+                <button class="ghost" data-screen="modules">Ver ejercicios</button>
+                <button class="primary" data-screen="progress">Ver progreso</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section
+        class="screen"
+        id="modules"
+        aria-label="Selector de módulo"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Niño</p>
+            <h2>Elige un módulo</h2>
+          </div>
+        </div>
+        <div class="module-grid">
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">✋</span>
+            <span>Motricidad fina</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🏃‍♂️</span>
+            <span>Motricidad gruesa</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🐾</span>
+            <span>Animales</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🚗</span>
+            <span>Transportes</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🫱🏻‍🫲🏽</span>
+            <span>Partes del cuerpo</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🛁</span>
+            <span>Rutinas del baño</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🔢</span>
+            <span>Números</span>
+          </button>
+          <button class="module-card" data-screen="exercise">
+            <span class="icon-circle">🧘‍♀️</span>
+            <span>Me calmo</span>
+          </button>
+        </div>
+        <div class="sticky-footer">
+          <button class="secondary" data-screen="dashboard">Volver</button>
+        </div>
+      </section>
+
+      <section
+        class="screen"
+        id="exercise"
+        aria-label="Ejercicio"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="exercise-top">
+          <div class="breadcrumb">
+            <button class="ghost" data-screen="modules">← Módulos</button>
+            <p class="eyebrow">Animales</p>
+          </div>
+          <div class="stars" aria-label="Estrellas ganadas">
+            <span>⭐</span><span>⭐</span><span class="muted">⭐</span>
+          </div>
+        </div>
+        <div class="exercise-stage">
+          <div class="stage-card">
+            <p class="stage-label">Consigna</p>
+            <p class="stage-text">Arrastra la imagen del gato al cuadro que dice "gato".</p>
+            <div class="image-placeholder" role="img" aria-label="Espacio para imagen o video"></div>
+          </div>
+        </div>
+        <div class="exercise-actions">
+          <button class="secondary">Repetir</button>
+          <button class="primary">Siguiente</button>
+          <button class="ghost" data-screen="modules">Salir</button>
+        </div>
+      </section>
+
+      <section
+        class="screen"
+        id="progress"
+        aria-label="Progreso del niño"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Reporte</p>
+            <h2>Progreso de Sofía</h2>
+          </div>
+          <button class="secondary" data-screen="dashboard">Volver al panel</button>
+        </div>
+        <article class="card profile">
+          <div class="avatar">S</div>
+          <div>
+            <p class="child-name">Sofía</p>
+            <p class="child-note">Última sesión: 12/03 - Motricidad fina</p>
+          </div>
+        </article>
+
+        <section class="card">
+          <h3>Progreso por módulo</h3>
+          <div class="bar-chart" role="img" aria-label="Gráfico de barras simple">
+            <div class="bar-row">
+              <span>Motricidad fina</span>
+              <div class="bar"><span style="width: 80%"></span><p>80%</p></div>
+            </div>
+            <div class="bar-row">
+              <span>Animales</span>
+              <div class="bar"><span style="width: 65%"></span><p>65%</p></div>
+            </div>
+            <div class="bar-row">
+              <span>Me calmo</span>
+              <div class="bar"><span style="width: 55%"></span><p>55%</p></div>
+            </div>
+            <div class="bar-row">
+              <span>Rutinas</span>
+              <div class="bar"><span style="width: 40%"></span><p>40%</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Últimas sesiones</h3>
+          <ul class="session-list">
+            <li>
+              <div>
+                <p class="label">12/03 - Motricidad fina</p>
+                <p class="child-note">Completado</p>
+              </div>
+              <span class="pill success">✔</span>
+            </li>
+            <li>
+              <div>
+                <p class="label">10/03 - Animales</p>
+                <p class="child-note">En curso</p>
+              </div>
+              <span class="pill warning">…</span>
+            </li>
+            <li>
+              <div>
+                <p class="label">08/03 - Me calmo</p>
+                <p class="child-note">Completado</p>
+              </div>
+              <span class="pill success">✔</span>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
